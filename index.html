@@ -1,45 +1,49 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Suporte</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <div class="form-container">
+    <h1>Formulário de Suporte</h1>
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDn00000CWWJV" method="POST">
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDn00000CWWJV" method="POST">
+      <!-- Hidden values obrigatórios -->
+      <input type="hidden" name="orgid" value="00DDn00000CWWJV">
+      <input type="hidden" name="retURL" value="https://descubra.watch.tv.br/blog/">
+      <input type="hidden" id="external" name="external" value="1">
 
-<input type=hidden name="orgid" value="00DDn00000CWWJV">
-<input type=hidden name="retURL" value="https://descubra.watch.tv.br/blog/">
+      <label for="name">Nome do Contato</label>
+      <input id="name" name="name" type="text" maxlength="80" required>
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="jose.santos@weenow.com.br">                                      -->
-<!--  ----------------------------------------------------------------------  -->
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" maxlength="80" required>
 
-<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+      <label for="phone">Telefone</label>
+      <input id="phone" name="phone" type="text" maxlength="40">
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+      <label for="priority">Prioridade</label>
+      <select id="priority" name="priority">
+        <option value="">--Selecione--</option>
+        <option value="High">🔴 Alta</option>
+        <option value="Medium">🟠 Média</option>
+        <option value="Low">🟢 Baixa</option>
+      </select>
 
-<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+      <label for="subject">Assunto</label>
+      <input id="subject" name="subject" type="text" maxlength="80">
 
-<label for="priority">Priority</label><select  id="priority" name="priority"><option value="">--None--</option><option value="High">&#128308; Alta</option>
-<option value="Medium">&#128993;Média</option>
-<option value="Low">&#128994; Baixa</option>
-</select><br>
+      <label for="description">Descrição</label>
+      <textarea id="description" name="description" rows="4"></textarea>
 
-<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 
-<label for="description">Description</label><textarea name="description"></textarea><br>
-
-<input type="hidden"  id="external" name="external" value="1" /><br>
-
-<input type="submit" name="submit">
-
-</form>
+</body>
+</html>
